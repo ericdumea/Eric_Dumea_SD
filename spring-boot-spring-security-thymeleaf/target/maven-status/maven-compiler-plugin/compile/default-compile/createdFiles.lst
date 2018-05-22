@@ -1,0 +1,8 @@
+com\mkyong\config\SpringSecurityConfig.class
+com\mkyong\model\Address.class
+com\mkyong\model\User.class
+com\mkyong\error\MyAccessDeniedHandler.class
+com\mkyong\controller\DefaultController.class
+com\mkyong\config\SuccessHandler.class
+com\mkyong\SpringBootWebApplication.class
+com\mkyong\service\UserRepository.class
