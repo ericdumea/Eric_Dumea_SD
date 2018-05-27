@@ -51,7 +51,6 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
                 isUser = true;
                 break;
             } else if (grantedAuthority.getAuthority().equalsIgnoreCase("ROLE_admin")) {
-                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ne admin in mama mamii ma-sii\n\n\n");
                 isAdmin = true;
                 break;
             }

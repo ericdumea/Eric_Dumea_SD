@@ -12,11 +12,50 @@
     <div class="starter-template">
         <h1>Admin page (Spring Security protected)</h1>
 
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
+        <br/>
         u just an admin, pleb
+        <br/>
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
+        <br/>
+        <br/>
+            <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                </tr>
+                </thead>
+                <tr th:each="user : ${ users }">
+                    <td th:text="${ user.id }" >ID</td>
+                    <td th:text="${ user.email }">Username</td>
+                    <td th:text="${ user.role }">Role</td>
+                </tr>
+                <tbody>
+                <!--<form th:action="@{/crud-users}" method="post">-->
+                    <!--<input type="submit" value="Edit Users"/>-->
+                <!--</form>-->
+                </tbody>
+            </table>
+
+        <br/> <br/>
+        <form th:action="@{/admin/edit-user/create}" th:object="${addUser}" method="post">
+
+            <legend><b>Add user</b></legend>
+            Email: <input type="text" id="username" th:field="${addUser.email}"/><br/>
+            Password: <input type="password" id="password" th:field="${addUser.password}"/><br/>
+            Name: <input type="text" id="Name" th:field="${addUser.name}"/><br/>
+            <br/>
+            <input type="submit"  class="button" name="create" value="Add" />
+        </form>
+
+        <br/><br/>
+
+
+
 
     </div>
 

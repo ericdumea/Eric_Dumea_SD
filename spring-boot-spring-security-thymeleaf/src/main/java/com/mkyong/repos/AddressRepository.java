@@ -1,6 +1,6 @@
-package com.mkyong.service;
+package com.mkyong.repos;
 
-import com.mkyong.model.Address;
+import com.mkyong.entity.Address;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

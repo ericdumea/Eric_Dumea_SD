@@ -1,8 +1,7 @@
-package com.mkyong.service;
+package com.mkyong.repos;
 
-import com.mkyong.model.User;
+import com.mkyong.entity.User;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.RepositoryDefinition;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,5 +11,6 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User,Long> {
 
     List<User> findByEmail(String email);
+
 
 }

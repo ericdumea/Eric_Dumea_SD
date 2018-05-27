@@ -10,9 +10,9 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>403 - Access is denied</h1>
-        <div th:inline="text">Hello '[[${#httpServletRequest.remoteUser}]]', you do not have permission to access this page.</div>
-        <a th:href = @{/} >Go back to homepage</a>
+        <h1>User already exists</h1>
+        <div>Please specify another user <a th:href="@{/register}">Go back to register page</a></div>
+        <a th:href="@{/}">I don't really want an account</a>
     </div>
 
 </div>

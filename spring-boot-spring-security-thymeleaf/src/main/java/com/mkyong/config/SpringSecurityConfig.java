@@ -48,7 +48,7 @@ import javax.sql.DataSource;
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/about").permitAll()
+                .antMatchers("/", "/home", "/about", "/register**","/register/reg-user","/userExists").permitAll()
                 .antMatchers("/user").access("hasRole('user')")
                 .antMatchers("/admin**").access("hasRole('admin')")
                 .anyRequest().authenticated()

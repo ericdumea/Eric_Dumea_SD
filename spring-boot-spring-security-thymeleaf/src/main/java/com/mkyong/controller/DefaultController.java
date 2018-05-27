@@ -8,18 +8,22 @@ public class DefaultController {
 
     @GetMapping("/")
     public String home1() {
-        return "/home";
+
+
+        return "/index";
+        //return "/home";
     }
 
     @GetMapping("/home")
     public String home() {
-        return "/home";
+        return "/index";
+        //return "/home";
     }
 
-    @GetMapping("/admin")
-    public String admin() {
-        return "/admin";
-    }
+//    @GetMapping("/admin")
+//    public String admin() {
+//
+//    }
 
     @GetMapping("/user")
     public String user() {
@@ -36,9 +40,15 @@ public class DefaultController {
         return "/login";
     }
 
+
     @GetMapping("/403")
     public String error403() {
         return "/error/403";
+    }
+
+    @GetMapping("/userExists")
+    public String errorUserExists() {
+        return "/error/userExists";
     }
 
 }

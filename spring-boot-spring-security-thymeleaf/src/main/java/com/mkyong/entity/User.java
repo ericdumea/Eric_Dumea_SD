@@ -1,7 +1,8 @@
-package com.mkyong.model;
+package com.mkyong.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,6 +18,14 @@ public class User {
    // private Address address;
     private String name;
     private String role;
+
+    @ManyToMany
+    @JoinTable(
+            name="user_groups",
+            joinColumns=@JoinColumn(name="user_id", referencedColumnName="id"),
+            inverseJoinColumns=@JoinColumn(name="usergroup_id", referencedColumnName="id"))
+    private List<UserGroup> groups;
+
 
     public User() {
     }
