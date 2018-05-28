@@ -22,6 +22,8 @@ public class Accommodation {
     private User host;
 
 
+
+
     public Accommodation() {
     }
 
@@ -63,4 +65,11 @@ public class Accommodation {
         this.host = host;
     }
 
+    @Override
+    public String toString() {
+        return "Available from: " + start_date +
+                " To: " + end_date +
+                "Hosted by: " + host ;
+
+    }
 }

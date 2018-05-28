@@ -18,31 +18,23 @@
     </div>
     <div class="neighborhood-guides">
         <div class="container">
-            <h2>Campus Guides</h2>
+            <h2>Available bookings</h2>
             <p> Not sure where to stay? We've created campus guides for cities all around the world.</p>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class = "thumbnail">
+            <table>
+                <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tr th:each="a : ${ bookings }">
+                    <td th:text="${ a.property }" >Property</td>
+                    <td th:text="${ a.price }">Price</td>
+                </tr>
+                <tbody>
+                </tbody>
+            </table>
 
-                    </div>
-                    <div class="thumbnail">
-                        <!--<img src="http://goo.gl/an2HXY" >-->
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class = "thumbnail">
-                        <!--<img src="http://goo.gl/Av1pac">-->
-                    </div>
-                    <div class="thumbnail">
-                        <!--<img src="http://goo.gl/vw43v1" >-->
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class = "thumbnail">
-                        <!--<img src="http://goo.gl/0Kd7UO">-->
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="learn-more">
@@ -51,7 +43,7 @@
                 <div class="col-md-4">
                     <h3>Travel</h3>
                     <p>From apartments and rooms to treehouses and boats: stay in unique spaces in 192 countries.</p>
-                    <p><a href="#">See how to travel on Airbnb</a></p>
+                    <p><a href="#">See how to travel on Dormshare</a></p>
                 </div>
                 <div class="col-md-4">
                     <h3>Host</h3>
@@ -59,9 +51,21 @@
                     <p><a href="#">Learn more about hosting</a></p>
                 </div>
                 <div class="col-md-4">
-                    <h3>Trust and Safety</h3>
-                    <p>From Verified ID to our worldwide customer support team, we've got your back.</p>
-                    <p><a href="#">Learn about trust at Airbnb</a></p>
+                    <h3>Check your groups</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                        </thead>
+                        <tr th:each="g : ${ userGroups }">
+                            <td th:text="${ g.id }" >ID</td>
+                            <td th:text="${ g.name }">Name</td>
+                        </tr>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

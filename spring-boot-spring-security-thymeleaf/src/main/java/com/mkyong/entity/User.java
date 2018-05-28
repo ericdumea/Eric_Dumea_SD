@@ -95,12 +95,20 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                //"id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", address=" + //address +
                 ", name='" + name + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    public List<UserGroup> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<UserGroup> groups) {
+        this.groups = groups;
     }
 }

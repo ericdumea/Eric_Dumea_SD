@@ -68,7 +68,6 @@ public class AdminController {
 
         @Override
         public boolean hasNext() {
-            System.out.println("am ajuns si aici");
             return (currentPointer < size);
         }
 
@@ -84,6 +83,26 @@ public class AdminController {
             return val;
         }
     }
+
+    @RequestMapping(value = "/admin/update-delete-user", params="action=update", method = RequestMethod.POST)
+    public String update(@ModelAttribute("editUser")  User user,  Model model){
+        if(user.getId() == 0)
+
+        user.setId(user.getId());
+        userService.update(user);
+        return "redirect:/admin";
+    }
+
+    @RequestMapping(value = "/admin/update-delete-user", params="action=delete", method = RequestMethod.POST)
+    public String delete(@ModelAttribute("editUser")  User user,  Model model){
+        if(user.getId() == 0)
+
+            user.setId(user.getId());
+        userService.remove(user);
+        return "redirect:/admin";
+    }
+
+
 
 
 }

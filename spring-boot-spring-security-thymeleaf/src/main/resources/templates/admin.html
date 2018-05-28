@@ -14,8 +14,6 @@
 
         <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
         <br/>
-        u just an admin, pleb
-        <br/>
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
@@ -50,6 +48,21 @@
             Name: <input type="text" id="Name" th:field="${addUser.name}"/><br/>
             <br/>
             <input type="submit"  class="button" name="create" value="Add" />
+        </form>
+
+        <form th:action="@{/admin/update-delete-user}" th:object="${editUser}" method="post">
+            <legend><b>Edit User</b></legend>
+            Id:
+            <select name="id" id="id" >
+                <option th:each="user : ${users}" th:field="${editUser.id}" th:value="${user.id}" th:text="${user.id}"></option>
+            </select><br/>
+            Email: <input type="text" id="username1" th:field="${editUser.email}"/><br/>
+            Password: <input type="password" id="password1" th:field="${editUser.password}"/><br/>
+            Name: <input type="text" id="name1" th:field="${editUser.name}"/><br/>
+
+            <input type="submit" class="button" name="action" value="update" />
+            <input type="submit" class="button" name="action" value="delete" />
+
         </form>
 
         <br/><br/>

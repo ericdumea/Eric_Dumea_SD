@@ -33,4 +33,15 @@ public class UserServiceImpl implements UserService {
     public User create(User user) {
         return userRepository.save(user);
     }
+
+    @Override
+    public void remove(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
+    public void update(User user) {
+        user.setRole("user");
+        userRepository.save(user);
+    }
 }
